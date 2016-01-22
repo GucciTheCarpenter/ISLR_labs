@@ -120,3 +120,31 @@ search()    # you can see that "Auto" is added to our environment
 
 plot(cylinders,mpg)     # plot more directly
 boxplot(mpg~cylinders, xlab="Number of Cylinders", ylab="Miles Per Gallon")
+
+# change var type
+cylinders = as.factor(cylinders)
+plot(cylinders, mpg)    # plot now defaults to boxplot
+
+# customize plot
+plot(cylinders, mpg, col="red", varwidth=T, xlab="cylinders", ylab="MPG")
+
+# more plotting
+    # hist
+hist(mpg,col=2,breaks=15)
+
+    # scatterplot matrix with pairs()
+pairs(Auto)
+pairs(~mpg + displacement + horsepower + weight + acceleration, Auto)
+
+# use identify {graphics} to select points on the plot for printing
+plot(horsepower,mpg)
+identify(horsepower,mpg,name)
+
+# summary statistics
+    # for all variables
+summary(Auto)    # see above
+
+    # for one var
+summary(mpg)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 9.00   17.50   23.00   23.52   29.00   46.60 
