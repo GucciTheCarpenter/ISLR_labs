@@ -77,21 +77,29 @@ ls()
 
         ### Generating random data, graphics
 
+if (!file.exists("plots")) {
+    dir.create("plots")
+}
+
 x = runif(50)   # random uniform
 y = rnorm(50)   # random norm
 
 plot(x,y)
+dev.copy(png,'./plots/Rplot1.png'); dev.off()    # copy plot to local
+
 plot(x,y,xlab="Random Uniform",ylab="Random Normal",pch="*",col="blue")
+dev.copy(png,'./plots/Rplot2.png'); dev.off()
 
 par(mfrow=c(2,1))   # panel of plots, 2 rows & 1 column
 plot(x,y)
 hist(y)
+dev.copy(png,'./plots/Rplot3.png'); dev.off()
 
 # panel will stay in place until reset
 par(mfrow=c(1,1))
 
 
-        ### [writing then] Reading in Data
+        ### Reading in Data
 
 Auto = read.csv("../data_sets/Auto.csv")
 names(Auto)    # review colnames
@@ -113,13 +121,16 @@ summary(Auto)
 #                                                 (Other):287 
 
 plot(Auto$cylinders,Auto$mpg)
+dev.copy(png,'./plots/Rplot4.png'); dev.off()
 
 attach(Auto)
 search()    # you can see that "Auto" is added to our environment
 # [1] ".GlobalEnv"        "Auto"              "package:ISLR"      "package:dplyr"     "package:tidyr"     "package:swirl"
 
 plot(cylinders,mpg)     # plot more directly
+dev.copy(png,'./plots/Rplot5.png'); dev.off()
 boxplot(mpg~cylinders, xlab="Number of Cylinders", ylab="Miles Per Gallon")
+dev.copy(png,'./plots/Rplot6.png'); dev.off()
 
 # change var type
 cylinders = as.factor(cylinders)
@@ -127,14 +138,17 @@ plot(cylinders, mpg)    # plot now defaults to boxplot
 
 # customize plot
 plot(cylinders, mpg, col="red", varwidth=T, xlab="cylinders", ylab="MPG")
+dev.copy(png,'./plots/Rplot7.png'); dev.off()
 
 # more plotting
     # hist
 hist(mpg,col=2,breaks=15)
+dev.copy(png,'./plots/Rplot8.png'); dev.off()
 
     # scatterplot matrix with pairs()
 pairs(Auto)
 pairs(~mpg + displacement + horsepower + weight + acceleration, Auto)
+dev.copy(png,'./plots/Rplot9.png'); dev.off()
 
 # use identify {graphics} to select points on the plot for printing
 plot(horsepower,mpg)
@@ -148,3 +162,40 @@ summary(Auto)    # see above
 summary(mpg)
 # Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 # 9.00   17.50   23.00   23.52   29.00   46.60 
+
+
+        ### ggplot2
+
+library(ggplot2)
+
+# scatter plot (x, y)
+rand_xy = data.frame(x,y)
+f <- ggplot(rand_xy, aes(x, y))
+f + geom_point(color='blue', shape='+', size=10) +
+    labs(list(title='Scatter Plot', x='Random Uniform', y='Random Norm'))
+dev.copy(png,'./plots/ggplots1.png'); dev.off()
+
+# hist of y
+a <- ggplot(rand_xy, aes(y))
+a + geom_histogram(bins = 15)
+dev.copy(png,'./plots/ggplots2.png'); dev.off()
+
+# Auto data
+# boxplot
+g <- ggplot(Auto, aes(factor(cylinders), mpg))
+g + geom_boxplot(aes(fill = factor(cylinders)))
+dev.copy(png,'./plots/ggplots3.png'); dev.off()
+
+# hist of mpg
+a <- ggplot(Auto, aes(mpg))
+a + geom_histogram(bins = 15, fill = 'dark green', color = 'white')
+dev.copy(png,'./plots/ggplots4.png'); dev.off()
+
+## TODO: scatterplot matrix 
+
+pairs(~mpg + displacement + horsepower + weight + acceleration, Auto)
+pair_features = c('mpg', 'displacement', 'horsepower', 'weight', 'acceleration')
+f <- ggplot(Auto, aes(mpg, displacement))
+f + geom_point() +
+    facet_grid(.~horsepower)
+dev.copy(png,'./plots/ggplots5.png'); dev.off()
