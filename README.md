@@ -6,7 +6,7 @@ The motivation for this repository is to bring together some of the various tech
 I have decided to use a common data set in order to:
 
 - have a consistent point of reference
-- identify similarities
+- identify similarities among tools
 - highlight differences
 - etc.
 
@@ -16,14 +16,14 @@ I found the [ISLR book](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printi
 
 Unless stated otherwise I intend to add additional languages/tools to the table below.
 
-| Chapter  | R (default setup)  | ggplot  | Shiny| Python |
+| Chapter  | R  | Python  | D3 | tbd |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Statistical Learning  | [x]  | [x]  | []  | [x]  |
-| Linear Regression  | [x]  | []  | []  | [] |
-| Classification  | []  | []  | []  | [] |
-| Resampling Methods  | []  | []  | []  | [] |
-| LM Selection & Regularization  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Moving Beyond Linearity  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Tree Based Methods | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| SVM's  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Unsupervised Learning | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Statistical Learning  |<ul><li>-[x] default setup</li><li>- [x] ggplot</li><li>- [ ] Shiny</li></ul>| <ul><li>- [x] matplotlib</li><li>- [x] Seaborn</li><li>- [x] bokeh</li></ul> | - | - |
+| Linear Regression  | <ul><li>- [x] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul> | - | - | - |
+| Classification  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul> | - | - | - |
+| Resampling Methods  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
+| LM Selection & Regularization  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
+| Moving Beyond Linearity  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
+| Tree Based Methods | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
+| SVM's  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
+| Unsupervised Learning | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
