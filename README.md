@@ -18,7 +18,7 @@ Unless stated otherwise I intend to add additional languages/tools to the table 
 
 | Chapter  | R  | Python  | D3 | tbd |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Statistical Learning  |<ul><li>-[x] default setup</li><li>- [x] [ggplot](ch02_Statistical_Learning/ch02_ggplot.md)</li><li>- [ ] Shiny</li></ul>| <ul><li>- [x] matplotlib</li><li>- [x] Seaborn</li><li>- [x] bokeh</li></ul> | - | - |
+| Statistical Learning  |<ul><li>-[x] [default setup](ch02_Statistical_Learning/Intro.R)</li><li>- [x] [ggplot](ch02_Statistical_Learning/ch02_ggplot.md)</li><li>- [ ] Shiny</li></ul>| <ul><li>- [x] matplotlib</li><li>- [x] Seaborn</li><li>- [x] bokeh</li></ul> | - | - |
 | Linear Regression  | <ul><li>- [x] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul> | - | - | - |
 | Classification  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul> | - | - | - |
 | Resampling Methods  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
