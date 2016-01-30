@@ -61,10 +61,4 @@ server <- function(input, output){
 }
 
 
-
 shinyApp(ui = ui, server = server)
-
-### NOTES
-
-#x = runif(50)   # random uniform
-#y = rnorm(50)   # random norm
