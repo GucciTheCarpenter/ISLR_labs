@@ -19,7 +19,7 @@ Unless stated otherwise I intend to add additional languages/tools to the table 
 | Chapter  | R  | Python  | D3 | tbd |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [Statistical Learning](ch02_Statistical_Learning) | <ul><li>-[x] [default setup](ch02_Statistical_Learning/Intro.R)</li><li>- [x] [ggplot](ch02_Statistical_Learning/ch02_ggplot.md)</li><li>- [ ] [Shiny](ch02_Statistical_Learning/shiny)</li></ul>| <ul><li>- [x] [Matplotlib][py02]</li><li>- [x] [Seaborn][py02]</li><li>- [x] [Bokeh][py02]</li></ul> | - | - |
-| [Linear Regression](ch03_Linear_Regression) | <ul><li>- [x] [default setup](ch03_Linear_Regression/regression.R)</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul> | - | - | - |
+| [Linear Regression](ch03_Linear_Regression) | <ul><li>- [x] [default setup](ch03_Linear_Regression/regression.R)</li><li>- [x] [ggplot](ch03_Linear_Regression/ch03_ggplot.md)</li><li>- [ ] Shiny</li></ul> | - | - | - |
 | Classification  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul> | - | - | - |
 | Resampling Methods  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
 | LM Selection & Regularization  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - |
