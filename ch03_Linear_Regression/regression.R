@@ -269,3 +269,62 @@ regplot = function(x,y,...) {
 
 regplot(Price,Sales,xlab='Price',ylab='Sales',col='blue',pch=20)
 dev.copy(png,'./plots/Rplot5.png'); dev.off()
+
+### ggplot
+library(ggplot2)
+
+f <- ggplot(Boston, aes(lstat, medv))
+f + geom_point(color='dodgerblue', alpha=.4, size=2) + 
+    geom_smooth(method = lm, color='darkred') + 
+    ggtitle('Housing Values in Suburbs of Boston') + 
+    xlab('Lower Status of the Population (%)') +
+    ylab("Median Value of Owner-Occupied Homes ($1,000's)")
+ggsave("./plots/ggplots1_boston_lm.png", width = 5, height = 5)
+
+
+### residuals
+# template: https://rpubs.com/therimalaya/43190
+fit3=lm(medv~.,Boston)
+f <- ggplot(fit3, aes(.fitted, .resid))
+f + geom_point() +
+    stat_smooth(method="loess") +
+    geom_hline(yintercept=0, col="red", linetype="dashed") +
+    xlab("Fitted values")+ylab("Residuals") + 
+    ggtitle("Residual vs Fitted Plot")
+ggsave("./plots/ggplots2_fitted_resid.png", width = 5, height = 5)
+
+
+### plot polynomials
+f <- ggplot(Boston, aes(x = lstat, y = medv))
+f + geom_point(color='dodgerblue', alpha=.4, size=2) +
+    stat_smooth(method = lm, formula = y ~ x + I(x^2), color='darkred', se = F) +
+    stat_smooth(method = lm, formula = y ~ poly(x, 4), se = F) +
+    ggtitle('Housing Values in Suburbs of Boston (poly)')
+ggsave("./plots/ggplots3_boston_poly.png", width = 5, height = 5)
+
+
+### plot different symbols
+# template: http://sape.inf.usi.ch/quick-reference/ggplot2/shape
+d=data.frame(p=c(0:25,32:127))
+ggplot() +
+    scale_y_continuous(name="") +
+    scale_x_continuous(name="") +
+    scale_shape_identity() +
+    geom_point(data=d, mapping=aes(x=p%%16, y=p%/%16, shape=p), size=5, fill="red") +
+    geom_text(data=d, mapping=aes(x=p%%16, y=p%/%16+0.25, label=p), size=3)
+
+d=data.frame(p=c(1:25))
+ggplot() +
+    scale_y_continuous(name="") +
+    scale_x_continuous(name="") +
+    scale_shape_identity() +
+    geom_point(data=d, mapping=aes(x=p%%26, y=p%%26, shape=p), size=5, fill="red") +
+    theme_bw()
+ggsave("./plots/ggplots4_symbols.png", width = 5, height = 5)
+
+
+f <- ggplot(Carseats, aes(Price, Sales))
+f + geom_point(color='dodgerblue', alpha=.4, size=2) + 
+    geom_smooth(method = lm, color='darkred') + 
+    labs(title = 'Carseats Dataset')
+ggsave("./plots/ggplots5_carseats_lm.png", width = 5, height = 5)
