@@ -1,6 +1,6 @@
 ## Running Shiny Apps off GitHub
 
-You can run these apps directly in R, with no need to download or fork, as long as you have the shiny package installed and active. 
+You can run these apps directly in R, with no need to download or fork, as long as you have the **shiny** package installed and active. 
 ```
 install.packages("shiny")
 library(shiny)
