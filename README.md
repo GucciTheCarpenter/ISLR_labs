@@ -8,13 +8,13 @@ I have decided to use a common data set in order to:
 - have a consistent point of reference
 - identify similarities among tools
 - highlight differences
-- etc.
+- blah, blah, blah
 
 The data set and exercises come from <a href="http://www-bcf.usc.edu/~gareth/ISL/" target="_blank">Introduction to Statistical Learning (ISLR)</a>, by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani, and are further informed by their <a href="https://www.youtube.com/user/dataschool/playlists?shelf_id=4&view=50&sort=dd" target="_blank">YouTube series</a>. 
 
 I found the <a href="http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf" target="_blank">ISLR book</a> to be a great learning tool and thought it an ideal candidate for this project. 
 
-Unless stated otherwise I intend to add additional languages/tools to the table below.
+I intend to continue adding languages/tools to the table below, a sorta on-going Rosetta Stone of data analysis and visualization.
 
 | Chapter  | R  | Python  | D3 | tbd |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
