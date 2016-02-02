@@ -6,7 +6,7 @@ install.packages("shiny")
 library(shiny)
 ```
 
-Reference the repo (**"ISLR_labs"**), user (**"GucciTheCarpenter"**), and your app/subfolder of choise as the 'subdir' (eg. **"ch02_Statistical_Learning/shiny/scatter_xy/"**).
+Reference the repo (**"ISLR_labs"**), user (**"GucciTheCarpenter"**), and your app/subfolder of choice as the 'subdir' (eg. **"ch02_Statistical_Learning/shiny/scatter_xy/"**).
 
 Full example:
 ```
