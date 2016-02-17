@@ -31,4 +31,4 @@ I intend to continue adding languages/tools to the table below, a sorta on-going
 
 [py02]: ch02_Statistical_Learning/Intro.ipynb
 [py03]: ch03_Linear_Regression/regression.ipynb
-[oct02]: ch02_Statistical_Learning/Intro_octave.m
+[oct02]: ch02_Statistical_Learning/Intro_octave.md
