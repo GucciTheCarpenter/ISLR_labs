@@ -22,7 +22,7 @@ I intend to continue adding languages/tools to the table below, a sorta on-going
 | [Linear Regression](ch03_Linear_Regression) | <ul><li>- [x] [lm](ch03_Linear_Regression/regression.R)</li><li>- [x] [ggplot](ch03_Linear_Regression/ch03_ggplot.md)</li><li>- [ ] Shiny</li></ul> | <ul><li>- [x] [NumPy][py03]</li><li>- [x] [StatsModels][py03]</li><li>- [x] [scikit-learn][py03]</li></ul> | - | - | <ul><li>- [x] [classifier output](ch03_Linear_Regression/ch03_weka.md) </li></ul> | - |
 | [Classification](ch04_Classification) | <ul><li>- [x]  [logit](ch04_Classification/classification1.R), [lda, & knn](ch04_Classification/classification2.R)</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul> | - | - | - | - |
 | [Resampling Methods](ch05_Resampling_Methods)  | <ul><li>- [x] [cv & bootstrap](ch05_Resampling_Methods/validation.R)</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
-| LM Selection & Regularization  | <ul><li>- [ ] default setup</li><li>- [ ] Rmd</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
+| [LM Selection & Regularization][ch06] | <ul><li>- [ ] default setup</li><li>- [ ] [Rmd](ch06/modelselect.Rmd)</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | Moving Beyond Linearity  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | Tree Based Methods | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | SVM's  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
@@ -32,3 +32,4 @@ I intend to continue adding languages/tools to the table below, a sorta on-going
 [py02]: ch02_Statistical_Learning/Intro.ipynb
 [py03]: ch03_Linear_Regression/regression.ipynb
 [oct02]: ch02_Statistical_Learning/Intro_octave.md
+[ch06]: ch06_Linear_Model_Selection_and_Regularization
