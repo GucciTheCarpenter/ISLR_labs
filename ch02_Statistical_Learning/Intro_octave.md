@@ -113,3 +113,93 @@ ans   test  x     z
 >> saveas (1, "plots/octplot3.png")
 ```
 ![plot](plots/octplot3.png?raw=true "scatter & hist")
+```
+>> ### reading in data
+>> ### http://octave.sourceforge.net/packages.php
+>> pkg install -forge dataframe
+>> ### warning: creating installation directory C:\Octave\Octave-4.0.0\share\octave\packages
+>> pkg list
+>> path    ### current load path
+>> addpath('C:\Octave\Octave-4.0.0\share\octave\packages\dataframe-1.1.0')
+>> pkg load dataframe
+>> pkg list    # confirm pkg loaded (look for '*')
+>> Auto = dataframe("../data_sets/Auto.csv")    # dataframe loading errors; frustrating, look for workaround
+>> --
+>> #   columns:
+>> # 1 mpg
+>> # 2 cylinders
+>> # 3 displacement
+>> # 4 horsepower
+>> # 5 weight
+>> # 6 acceleration
+>> # 7 year
+>> # 8 origin
+>> --
+>> ### option1 - csvread (w/spreadsheet range)
+>> Auto = csvread("../data_sets/Auto.csv", "A2:H398")
+>> size(Auto)
+>> # scatter matrix (option1 Auto)
+>> plotmatrix(Auto)    # this import removes "?'s" in 'horsepower' col
+>> saveas (1, "plots/octplot4.png")
+```
+![plot](plots/octplot4.png?raw=true "scatterplot matrix")
+```
+>> ### option2 - dlmread (w/4-element vector range)
+>> Auto = dlmread("../data_sets/Auto.csv", ",", [1,0,396,7])
+>> size(Auto)
+>> # boxplot (option2 Auto)
+>> pkg install -forge statistics
+>> pkg load statistics
+>> pkg list
+>> --
+>> mpg = Auto(:,1)
+>> cyl = Auto(:,2)
+>> --
+>> cyl_cat = unique(Auto(:,2)); size(cyl_cat)
+>> cyl_cat = reshape(cyl_cat,1,5); size(cyl_cat)
+>> --
+>> # messing about
+>>   # for i = cyl_cat
+>>   # Auto([Auto(:,2)==i],1)
+>>   # endfor
+>> --
+>> # messing about
+>>   # for i = cyl_cat
+>>   # mpg([cyl == i])
+>>   # endfor
+>> --
+>> # source1: http://stackoverflow.com/questions/15344953/octave-boxplot-grouping-variable
+>> # source2: http://stackoverflow.com/questions/12375590/octave-boxplot-axis
+>> for i = 1:length(cyl_cat)
+>>   XG{i} = mpg(cyl == cyl_cat(i));
+>> end
+>> boxplot(XG);
+>> set(gca, 'xtick', [1:5]);
+>> set(gca, 'XTickLabel', cyl_cat);
+>> title('boxplot: mpg~cyl');
+>> xlabel('cylinders');
+>> ylabel('mpg');
+>> grid;
+>> saveas (1, "plots/octplot5.png")
+```
+![plot](plots/octplot5.png?raw=true "boxplot")
+```
+>> ### option3 - csv2cell
+>> pkg install -forge io
+>> pkg load io
+>> pkg list    # confirm pkg loaded (look for '*')
+>> Auto = csv2cell("../data_sets/Auto.csv", ",")
+>> size(Auto)
+>> display(Auto(1,:))
+>> --
+>> # hist (option3 Auto)
+>> mpg = [Auto{2:398,1}]
+>> hist(mpg,20,'r');
+>> title('histogram of mpg');
+>> xlabel('mpg');
+>> ylabel('frequency');
+>> ylim([0,45]);
+>> legend('bins = 20');
+>> saveas (1, "plots/octplot6.png")
+```
+![plot](plots/octplot6.png?raw=true "hist")
