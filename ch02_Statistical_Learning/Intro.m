@@ -62,5 +62,82 @@ saveas (1, "plots/octplot3.png")
 pkg install -forge dataframe
 ### warning: creating installation directory C:\Octave\Octave-4.0.0\share\octave\packages
 pkg list
-dataframe("../data_sets/Auto.csv")
+path    ### current load path
+addpath('C:\Octave\Octave-4.0.0\share\octave\packages\dataframe-1.1.0')
+pkg load dataframe
+pkg list    # confirm pkg loaded (look for '*')
+Auto = dataframe("../data_sets/Auto.octave.csv")    # dataframe loading errors; frustrating, look for workaround
 
+#   columns:
+# 1 mpg
+# 2 cylinders
+# 3 displacement
+# 4 horsepower
+# 5 weight
+# 6 acceleration
+# 7 year
+# 8 origin
+
+### option1 - csvread (w/spreadsheet range)
+Auto = csvread("../data_sets/Auto.csv", "A2:H398")
+size(Auto)
+# scatter matrix (option1 Auto)
+plotmatrix(Auto)    # this import removes "?'s" in 'horsepower' col
+saveas (1, "plots/octplot4.png")
+
+### option2 - dlmread (w/4-element vector range)
+Auto = dlmread("../data_sets/Auto.csv", ",", [1,0,396,7])
+size(Auto)
+# boxplot (option2 Auto)
+pkg install -forge statistics
+pkg load statistics
+pkg list
+
+mpg = Auto(:,1)
+cyl = Auto(:,2)
+
+cyl_cat = unique(Auto(:,2)); size(cyl_cat)
+cyl_cat = reshape(cyl_cat,1,5); size(cyl_cat)
+
+# for i = cyl_cat
+# Auto([Auto(:,2)==i],1)
+# endfor
+
+for i = cyl_cat
+mpg([cyl == i])
+endfor
+
+# source: http://stackoverflow.com/questions/15344953/octave-boxplot-grouping-variable
+for i = 1:length(cyl_cat)
+  XG{i} = X(G == cyl_cat(i));
+ end
+ boxplot(XG);
+
+x = [1, 2, 4];
+y1 = [6, 2, 3, 15];
+y2 = [1, 7, 3];
+y3 = [1, 9, 2];
+
+boxplot ({y1,y2,y3});
+set(gca, 'xtick', [1:3]);
+set(gca,'XTickLabel',x);
+refresh;
+
+
+### option3 - csv2cell
+pkg install -forge io
+pkg load io
+pkg list    # confirm pkg loaded (look for '*')
+Auto = csv2cell("../data_sets/Auto.csv", ",")
+size(Auto)
+Auto(1,:)
+
+# hist (option3 Auto)
+mpg = [Auto{2:398,1}]
+hist(mpg,20,'r');
+title('histogram of mpg');
+xlabel('mpg');
+ylabel('frequency');
+ylim([0,45]);
+legend('bins = 20');
+saveas (1, "plots/octplot5.png")
