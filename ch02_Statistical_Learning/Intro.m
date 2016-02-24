@@ -66,7 +66,7 @@ path    ### current load path
 addpath('C:\Octave\Octave-4.0.0\share\octave\packages\dataframe-1.1.0')
 pkg load dataframe
 pkg list    # confirm pkg loaded (look for '*')
-Auto = dataframe("../data_sets/Auto.octave.csv")    # dataframe loading errors; frustrating, look for workaround
+Auto = dataframe("../data_sets/Auto.csv")    # dataframe loading errors; frustrating, look for workaround
 
 #   columns:
 # 1 mpg
@@ -99,30 +99,29 @@ cyl = Auto(:,2)
 cyl_cat = unique(Auto(:,2)); size(cyl_cat)
 cyl_cat = reshape(cyl_cat,1,5); size(cyl_cat)
 
-# for i = cyl_cat
-# Auto([Auto(:,2)==i],1)
-# endfor
+# messing about
+  # for i = cyl_cat
+  # Auto([Auto(:,2)==i],1)
+  # endfor
 
-for i = cyl_cat
-mpg([cyl == i])
-endfor
+# messing about
+  # for i = cyl_cat
+  # mpg([cyl == i])
+  # endfor
 
-# source: http://stackoverflow.com/questions/15344953/octave-boxplot-grouping-variable
+# source1: http://stackoverflow.com/questions/15344953/octave-boxplot-grouping-variable
+# source2: http://stackoverflow.com/questions/12375590/octave-boxplot-axis
 for i = 1:length(cyl_cat)
-  XG{i} = X(G == cyl_cat(i));
- end
- boxplot(XG);
-
-x = [1, 2, 4];
-y1 = [6, 2, 3, 15];
-y2 = [1, 7, 3];
-y3 = [1, 9, 2];
-
-boxplot ({y1,y2,y3});
-set(gca, 'xtick', [1:3]);
-set(gca,'XTickLabel',x);
-refresh;
-
+  XG{i} = mpg(cyl == cyl_cat(i));
+end
+boxplot(XG);
+set(gca, 'xtick', [1:5]);
+set(gca, 'XTickLabel', cyl_cat);
+title('boxplot: mpg~cyl');
+xlabel('cylinders');
+ylabel('mpg');
+grid;
+saveas (1, "plots/octplot5.png")
 
 ### option3 - csv2cell
 pkg install -forge io
@@ -130,7 +129,7 @@ pkg load io
 pkg list    # confirm pkg loaded (look for '*')
 Auto = csv2cell("../data_sets/Auto.csv", ",")
 size(Auto)
-Auto(1,:)
+display(Auto(1,:))
 
 # hist (option3 Auto)
 mpg = [Auto{2:398,1}]
@@ -140,4 +139,4 @@ xlabel('mpg');
 ylabel('frequency');
 ylim([0,45]);
 legend('bins = 20');
-saveas (1, "plots/octplot5.png")
+saveas (1, "plots/octplot6.png")
