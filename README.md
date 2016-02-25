@@ -16,7 +16,7 @@ I found the <a href="http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.
 
 I intend to add languages/tools to the table below, a sorta on-going Rosetta Stone of data analysis and visualization, as the majority of checkboxes/rows/colmns get filled in.
 
-| Chapter  | R  | Python  | D3 | MATLAB/Octave | Weka | Excel (?!) |
+| Chapter  | R  | Python  | D3 | MATLAB / Octave | Weka | Excel (?!) |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [Statistical Learning](ch02_Statistical_Learning) | <ul><li>-[x] [intro to R](ch02_Statistical_Learning/Intro.R)</li><li>- [x] [ggplot](ch02_Statistical_Learning/Intro_ggplot.md)</li><li>- [x] [Shiny](ch02_Statistical_Learning/shiny)</li></ul>| <ul><li>- [x] [Matplotlib][py02]</li><li>- [x] [Seaborn][py02]</li><li>- [x] [Bokeh][py02]</li></ul> | - | <ul><li>- [x] [vectors][oct02]</li><li>- [x] [matrices][oct02]</li><li>- [x] [plots][oct02] </li></ul> | <ul><li>- [x] [summary plots](ch02_Statistical_Learning/Intro_weka.md) </li></ul> | - |
 | [Linear Regression](ch03_Linear_Regression) | <ul><li>- [x] [lm](ch03_Linear_Regression/regression.R)</li><li>- [x] [ggplot](ch03_Linear_Regression/ch03_ggplot.md)</li><li>- [ ] Shiny</li></ul> | <ul><li>- [x] [NumPy][py03]</li><li>- [x] [StatsModels][py03]</li><li>- [x] [scikit-learn][py03]</li></ul> | - | - | <ul><li>- [x] [classifier output](ch03_Linear_Regression/ch03_weka.md) </li></ul> | - |
