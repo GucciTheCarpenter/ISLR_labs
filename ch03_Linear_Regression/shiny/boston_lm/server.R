@@ -5,45 +5,28 @@ require(ggplot2)
 require(MASS)
 require(ISLR)
 
+dat <- Boston
 
 shinyServer(function(input, output) {
     
-    curdata <- reactive({
-        switch(input$dataset,
-               "Boston" = Boston,
-               "Carseats" = Carseats)
+    text <- reactive({
+        paste(input$yvar, '~', input$xvar)
     })
     
-    xvar <- reactive({
-        switch(input$dataset,
-               Boston = lstat,
-               Carseats = Price)
+    output$caption <- renderText({
+        text()
     })
     
-    yvar <- reactive({
-        switch(input$dataset,
-               Boston = medv,
-               Carseats = Sales)
-    })
-    
-    output$text <- renderText({
-        input$x
+    output$plot <- renderPlot({
+        p <- ggplot(dat, aes_string(x=input$xvar, y=input$yvar)) + 
+            geom_point() + 
+            geom_smooth()
+        print(p)
     })
     
     output$summary <- renderPrint({
-        ols <- lm(mtcars$mpg~mtcars$wt)
-        print(summary(ols))
-    })
-    
-    output$dot <- renderPlot({
-        if (input$plot_type == "base") {
-            xvals <- curdata()[[xvar()]]
-            yvals <- curdata()[[yvar()]]
-            plot(xvals, yvals)
-        } else if (input$plot_type == "ggplot2") {
-            dat <- curdata()
-            ggplot(curdata(), aes(xvar, yvar())) + geom_point()
-        }
+        formula = paste(input$yvar,"~",input$xvar,sep="")
+        print(summary(lm(formula, dat)))
     })
     
 })

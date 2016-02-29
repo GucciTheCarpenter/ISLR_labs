@@ -2,38 +2,26 @@
 
 shinyUI(fluidPage(
     
-    titlePanel("Linear Model"),
+    titlePanel("Boston Linear Models"),
     sidebarLayout(
         sidebarPanel(
-            h4("Set parameters below."),
+            h3("Set parameters below."),
             br(),
             
-            selectInput("x",
-                        "Choose an X var:",
+            selectInput("xvar",
+                        label = h4("x-axis"),
                         choices = names(Boston),
                         selected = "lstat"),
-            
-            selectInput("y",
-                        "Choose a Y var:",
+            selectInput("yvar",
+                        label = h4("y-axis"),
                         choices = names(Boston),
-                        selected = "medv"),
-            
-            radioButtons("dataset",
-                         "Data Set",
-                         c("Boston", "Carseats"),
-                         selected = "Boston"),
-            
-            radioButtons("plot_type",
-                         "Plotting Style",
-                         c("base", "ggplot2"),
-                         selected = "ggplot2")
+                        selected = "medv")
         ),
         
         mainPanel(
-            h4("Dot Plot: X v Y"),
-            plotOutput("dot"),
-            textOutput("text"),
-            p("Summary"),
+            h2(textOutput("caption")),
+            plotOutput("plot"),
+            h4("Summary"),
             verbatimTextOutput("summary")
         )
     )
