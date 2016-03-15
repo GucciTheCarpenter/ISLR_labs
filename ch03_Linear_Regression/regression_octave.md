@@ -1,3 +1,4 @@
+```
 >> pkg list        # check loaded packages
 Package Name  | Version | Installation directory
 --------------+---------+-----------------------
@@ -15,7 +16,9 @@ Package Name  | Version | Installation directory
        optim  |   1.5.0 | C:\Octave\Octave-4.0.0\share\octave\packages\optim-1.5.0
   statistics  |   1.2.4 | C:\Octave\Octave-4.0.0\share\octave\packages\statistics-1.2.4
       struct  |  1.0.12 | C:\Octave\Octave-4.0.0\share\octave\packages\struct-1.0.12
+```
 ### Boston dim & headers inspection
+```
 >> Boston_temp = csv2cell("../data_sets/Boston.csv", ",");
 >> size(Boston_temp)
 ans =
@@ -38,7 +41,9 @@ names =
   [1,13] = lstat
   [1,14] = medv
 }
+```
 ### Boston matrix
+```
 >> Boston = dlmread("../data_sets/Boston.csv", ",", [1,0,507,14]);
 ### assign variables
 >> medv = Boston(:,14);
@@ -52,8 +57,9 @@ names =
 >> grid;
 >> saveas (1, "plots/octplot1_scatter.png");
 >> pause;        # using pause to generate later plot
-d
+```
 ### fit1 - linear regression
+```
 >>   # http://www.lauradhamilton.com/tutorial-linear-regression-with-octave
 >> m = length(lstat);            # length of data points
 >> X = [ones(m,1) lstat];       # multi-column matrix
@@ -69,7 +75,9 @@ theta =
 >> legend('data points', 'lm')
 >> hold off
 >> saveas (1, "plots/octplot2_lm.png");
+```
 ### fit1 - LinearRegression - forge
+```
 >>   # 95% confidence interval
 >>   # http://octave.sourceforge.net/optim/function/LinearRegression.html
 >>   # optim
@@ -102,7 +110,9 @@ theta =
 >> ylim([-20,30]);
 >> grid on
 >> saveas (1, "plots/octplot4_resid.png");
+```
 ### fit2 - multiple linear regression
+```
 >> lstat = Boston(:,13);
 >> age = Boston(:,7);
 >> F = [ones(506,1) lstat age];  # create matrix
@@ -114,7 +124,9 @@ p =
    33.222761
    -1.032069
     0.034544
+```
 ### fit5 - medv~lstat*age
+```
 >> lstat = Boston(:,13);
 >> age = Boston(:,7);
 >> F = [ones(506,1) lstat age lstat.*age];
@@ -131,7 +143,9 @@ p =
 >> yFit = F*p;
 >> sum((yFit .- y).^2)/506
 ans =  37.505
+```
 ### fit6 & 7 - nonlinear fit
+```
 >>   # p = polyfit (x, y, n)
 >> x = Boston(:,13);             # assigning lstat to 'x'
 >> y = Boston(:,14);             # assigning medv to 'y'
@@ -146,3 +160,4 @@ ans =  37.505
 >> ylim([0,60]);
 >> grid on
 >> saveas (1, "plots/octplot5_poly.png");
+```
