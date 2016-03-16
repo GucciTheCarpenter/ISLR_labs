@@ -26,7 +26,7 @@ I intend to add languages/tools to the table below, a sorta on-going Rosetta Sto
 | Moving Beyond Linearity  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | Tree Based Methods | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | SVM's  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
-| Unsupervised Learning | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
+| [Unsupervised Learning][ch10] | <ul><li>- [x] [PCA, kmeans, & hierarchical clustering](ch10_Unsupervised_Learning/unsupervised.Rmd) </li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 
 
 [py02]: ch02_Statistical_Learning/Intro.ipynb
@@ -35,3 +35,5 @@ I intend to add languages/tools to the table below, a sorta on-going Rosetta Sto
 [oct02]: ch02_Statistical_Learning/Intro_octave.md
 [oct03]: ch03_Linear_Regression/regression_octave.md
 [ch06]: ch06_Linear_Model_Selection_and_Regularization
+
+[ch10]: ch10_Unsupervised_Learning
