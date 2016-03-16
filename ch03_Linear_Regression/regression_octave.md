@@ -58,6 +58,7 @@ names =
 >> saveas (1, "plots/octplot1_scatter.png");
 >> pause;        # using pause to generate later plot
 ```
+![plot](plots/octplot1_scatter.png?raw=true "scatter")
 ### fit1 - linear regression
 ```
 >>   # http://www.lauradhamilton.com/tutorial-linear-regression-with-octave
@@ -76,6 +77,7 @@ theta =
 >> hold off
 >> saveas (1, "plots/octplot2_lm.png");
 ```
+![plot](plots/octplot2_lm.png?raw=true "lm")
 ### fit1 - LinearRegression - forge
 ```
 >>   # 95% confidence interval
@@ -98,7 +100,10 @@ theta =
 >> ylim([0,60]);
 >> grid on
 >> saveas (1, "plots/octplot3_lm95.png");
+```
+![plot](plots/octplot3_lm95.png?raw=true "conf intervals")
 ### fitted residuals
+```
 >> fitted = yFit;
 >> resid = y .- yFit;
 >> plot(fitted, resid, '.k', fitted, fitted.*0, '-r');
@@ -111,6 +116,7 @@ theta =
 >> grid on
 >> saveas (1, "plots/octplot4_resid.png");
 ```
+![plot](plots/octplot4_resid.png?raw=true "residuals")
 ### fit2 - multiple linear regression
 ```
 >> lstat = Boston(:,13);
@@ -161,3 +167,4 @@ ans =  37.505
 >> grid on
 >> saveas (1, "plots/octplot5_poly.png");
 ```
+![plot](plots/octplot5_poly.png?raw=true "poly")
