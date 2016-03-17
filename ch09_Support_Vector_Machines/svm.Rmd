@@ -16,7 +16,7 @@ y=rep(c(-1,1),c(10,10))
 x[y==1,]=x[y==1,]+1
 plot(x,col=y+3,pch=19)
 ```
-
+![plot](plots/Rplot_svm1.png?raw=true)
 load package `e1071` containing `svm` function (br)
 will have to specify tuning parameter, `icost`
 ```{r}
@@ -26,7 +26,7 @@ svmfit=svm(y~.,data=dat,kernel="linear",cost=10,scale=FALSE)
 print(svmfit)
 plot(svmfit,dat)
 ```
-
+![plot](plots/Rplot_svm2.png?raw=true)
 Plot function somewhat crude and plots X2 on the horizontal axis, unlike R's automatic matix plotting
 
 Create function with `expand.grid`
@@ -44,7 +44,7 @@ points(x,col=y+3,pch=19)
 # highlight support vector (points)
 points(x[svmfit$index,],pch=5,cex=2)
 ```
-
+![plot](plots/Rplot_svm3.png?raw=true)
 Extract linear coefficients<br>
 Include decision boundary WITH the two margins
 ```{r}
@@ -58,7 +58,7 @@ abline(beta0/beta[2],-beta[1]/beta[2])
 abline((beta0-1)/beta[2],-beta[1]/beta[2],lty=2)
 abline((beta0+1)/beta[2],-beta[1]/beta[2],lty=2)
 ```
-
+![plot](plots/Rplot_svm4.png?raw=true)
 Nonlinear SVM
 ---
 
@@ -73,6 +73,9 @@ attach(ESL.mixture)
 Plot nonlinear SVM, using a radial kernel
 ```{r}
 plot(x,col=y+1)
+```
+![plot](plots/Rplot_svm5.png?raw=true)
+```{r}
 dat=data.frame(y=factor(y),x)
 fit=svm(factor(y)~.,data=dat,scale=FALSE,kernel="radial",cost=5)
 ```
@@ -89,6 +92,7 @@ ygrid=predict(fit,xgrid)
 plot(xgrid,col=as.numeric(ygrid),pch=20,cex=.2)
 points(x,col=y+1,pch=19)
 ```
+![plot](plots/Rplot_svm6.png?raw=true)
 Make use of contour function to plot decision boundary.<br>
 `ESL.mixture` has `prob` with true class probability.<br>
 If we plot its 0.5 contour, will get _Bayes Decision Boundary_
@@ -104,3 +108,4 @@ points(x,col=y+1,pch=19)
 contour(px1,px2,matrix(func,69,99),level=0,add=TRUE)
 contour(px1,px2,matrix(prob,69,99),level=.5,add=T,col="blue")
 ```
+![plot](plots/Rplot_svm7.png?raw=true)
