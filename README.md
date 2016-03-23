@@ -24,7 +24,7 @@ I intend to add languages/tools to the table below, a sorta on-going Rosetta Sto
 | [Resampling Methods](ch05_Resampling_Methods)  | <ul><li>- [x] [cv & bootstrap](ch05_Resampling_Methods/validation.R)</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | [LM Selection & Regularization][ch06] | <ul><li>- [x] [ridge & lasso](ch06_Linear_Model_Selection_and_Regularization/modelselect.Rmd)</li><li>- [x] [Rmd](ch06_Linear_Model_Selection_and_Regularization/modelselect.Rmd)</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | Moving Beyond Linearity  | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
-| Tree Based Methods | <ul><li>- [ ] default setup</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
+| [Tree Based Methods][ch08] | <ul><li>- [x] [trees, random forest, & boosting](ch08_Tree_Based_Methods/trees.Rmd)</li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 | [SVM's][ch09]  | <ul><li>- [x] [linear & nonlinear](ch09_Support_Vector_Machines/svm.Rmd) </li></ul>  | - | - | - | - | - |
 | [Unsupervised Learning][ch10] | <ul><li>- [x] [PCA, kmeans, & hierarchical clustering](ch10_Unsupervised_Learning/unsupervised.Rmd) </li><li>- [ ] ggplot</li><li>- [ ] Shiny</li></ul>  | - | - | - | - | - |
 
@@ -36,5 +36,6 @@ I intend to add languages/tools to the table below, a sorta on-going Rosetta Sto
 [oct03]: ch03_Linear_Regression/regression_octave.md
 [ch06]: ch06_Linear_Model_Selection_and_Regularization
 
+[ch08]: ch08_Tree_Based_Methods
 [ch09]: ch09_Support_Vector_Machines
 [ch10]: ch10_Unsupervised_Learning
